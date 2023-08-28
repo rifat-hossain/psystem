@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1692633028 source:g:\psystem\examples\generating_ybus\main.cpp
+	<iostream>
+	"../../cpp_library/include/psystem.h"
+
+1692630869 g:\psystem\cpp_library\include\psystem.h
+	"Bus.h"
+	"Connection.h"
+	<vector>
+
+1692630807 g:\psystem\cpp_library\include\bus.h
+	<iostream>
+	<complex>
+
+1692630839 g:\psystem\cpp_library\include\connection.h
+	<complex>
+
