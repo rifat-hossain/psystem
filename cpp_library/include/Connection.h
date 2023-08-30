@@ -13,6 +13,7 @@ public:
     double K;
     double V;
     double S;
+    double I;
     bool donepu;
     bool ispu;
     Connection();

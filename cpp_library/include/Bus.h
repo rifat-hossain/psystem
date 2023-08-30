@@ -9,6 +9,10 @@ class Bus
 {
     public:
         Bus();
+        double v;
+        double d;
+        double p;
+        double q;
         Bus(int type, double val1, double val2, bool ispu);
         enum bType{
             VD_BUS,
@@ -25,10 +29,6 @@ class Bus
 
     private:
         bool ispu = false;
-        double v;
-        double d;
-        double p;
-        double q;
         complex<float> vcom;
 };
 

@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1692633028 source:g:\psystem\examples\generating_ybus\main.cpp
+1693367406 source:g:\psystem\examples\powerflow\main.cpp
 	<iostream>
 	"../../cpp_library/include/psystem.h"
 
-1693287065 g:\psystem\cpp_library\include\psystem.h
+1693331886 g:\psystem\cpp_library\include\psystem.h
 	"Bus.h"
 	"Connection.h"
 	<math.h>

@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1692630794 source:g:\psystem\cpp_library\src\bus.cpp
+	"Bus.h"
+
+1693248681 g:\psystem\cpp_library\include\bus.h
+	<iostream>
+	<complex>
+
+1693235800 source:g:\psystem\cpp_library\src\connection.cpp
+	"Connection.h"
+
+1693235796 g:\psystem\cpp_library\include\connection.h
+	<complex>
+
+1693365620 source:g:\psystem\cpp_library\src\psystem.cpp
+	"psystem.h"
+
+1693331886 g:\psystem\cpp_library\include\psystem.h
+	"Bus.h"
+	"Connection.h"
+	<math.h>
+	<vector>
+
