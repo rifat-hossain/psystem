@@ -1,7 +1,7 @@
 #include "Connection.h"
 
 Connection::Connection() {}
-Connection::Connection(int terminal1, int terminal2, double R, double X, double k)
+Connection::Connection(int terminal1, int terminal2, double R, double X, double k, bool ispu)
 {
     this->I = 0;
     this->V = -1;
@@ -11,7 +11,7 @@ Connection::Connection(int terminal1, int terminal2, double R, double X, double 
     this->terminal2 = terminal2;
     this->Z = complex<double>(R,X);
     this->K = k;
-    this->ispu = false;
+    this->ispu = ispu;
 }
 Connection::Connection(int terminal1, int terminal2, double R_pu, double X_pu, double s, double v, double k)
 {

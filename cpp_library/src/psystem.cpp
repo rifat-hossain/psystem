@@ -109,13 +109,14 @@ psystem::analyze_powerflow(int iteration)
     complex<double> current;
     complex<double> voltage;
     complex<double> yb;
+    double e = 0;
     for(int i=1; i < this->buses.size(); i++)
     {
         switch(this->buses[i].type)
         {
         case Bus::PV_BUS:
             current_element(current, i);
-            this->buses[i].q = -imag(conj(polar(this->buses[i].v,this->buses[i].d))*current);
+            this->buses[i].q = 0;
             this->buses[i].d = 0;
             break;
         case Bus::PQ_BUS:
@@ -130,7 +131,6 @@ psystem::analyze_powerflow(int iteration)
     }
     for(;iteration > 0; iteration--)
     {
-        cut_loop = true;
         for(int i=1; i < this->buses.size(); i++)
         {
             switch(this->buses[i].type)
@@ -138,7 +138,11 @@ psystem::analyze_powerflow(int iteration)
             case Bus::PV_BUS:
                 current_element(current,i);
                 get_ybus_element(yb,i,i);
+                this->buses[i].q = -imag(conj(polar(this->buses[i].v,this->buses[i].d))*current);
                 voltage = (complex<double>(this->buses[i].p,-this->buses[i].q)/conj(polar(this->buses[i].v,this->buses[i].d)) - current + (yb * polar(this->buses[i].v,this->buses[i].d)))/yb;
+                e = sqrt(pow(this->buses[i].v,2)-pow(imag(voltage),2));
+                voltage = complex<double>(e,imag(voltage));
+                this->buses[i].v = abs(voltage);
                 this->buses[i].d = atan(imag(voltage)/real(voltage));
                 break;
             case Bus::PQ_BUS:
@@ -150,6 +154,9 @@ psystem::analyze_powerflow(int iteration)
                 break;
             }
         }
+    }
+    for(int i =0; i < this->conns.size(); i++){
+        this->conns[i].I = (complex<double>(this->buses[this->conns[i].terminal2].v,this->buses[this->conns[i].terminal2].d)-complex<double>(this->buses[this->conns[i].terminal1].v,this->buses[this->conns[i].terminal1].d))/this->conns[i].Z;
     }
 }
 

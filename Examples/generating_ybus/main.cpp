@@ -15,10 +15,10 @@ int main()
 
     ps.addConn(Connection(1,0,0,0.18,90e6,22e3,1));
     ps.addConn(Connection(1,2,0,0.1,50e6,22e3,10));
-    ps.addConn(Connection(2,3,0,48.4,1));
+    ps.addConn(Connection(2,3,0,48.4,1, false));
     ps.addConn(Connection(3,4,0,0.06,40e6,220e3,0.05));
     ps.addConn(Connection(1,5,0,0.064,40e6,22e3,5));
-    ps.addConn(Connection(5,6,0,65.43,1));
+    ps.addConn(Connection(5,6,0,65.43,1, false));
     ps.addConn(Connection(6,4,0,0.08,40e6,110e3,0.1));
     ps.addConn(Connection(4,0,0,0.185,66.5e6,10.45e3,1));
 
