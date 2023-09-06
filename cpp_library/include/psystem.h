@@ -17,6 +17,7 @@ class psystem
         int get_ybus_element(complex<double>& element, int i, int j);
         int make_pu(double v_base, double s_base, int bus_id);
         int analyze_powerflow(int iteration);
+        int analyze_powerflow(double th_error, int max_iteration);
         virtual ~psystem();
 
     protected:
