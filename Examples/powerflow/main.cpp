@@ -16,11 +16,15 @@ int main()
     ps.addConn(Connection(2,3,0.0125,0.025,1, true));
 
     ps.init_ybus();
-    ps.analyze_powerflow(7);
+    ps.analyze_powerflow(0.03, 100000);
 
     Bus b;
     ps.getBus(b,3);
     cout << b.q << endl;
     cout << polar(b.v,b.d) << endl;
+
+    Connection conn;
+    ps.getConn(conn,0);
+    cout << conn.I << endl;
     return 0;
 }
