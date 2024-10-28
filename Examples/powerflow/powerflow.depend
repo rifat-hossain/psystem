@@ -16,3 +16,20 @@
 1693931845 g:\psystem\cpp_library\include\connection.h
 	<complex>
 
+1727845096 source:e:\project\psystem\examples\powerflow\main.cpp
+	<iostream>
+	"../../cpp_library/include/psystem.h"
+
+1727845096 e:\project\psystem\cpp_library\include\psystem.h
+	"Bus.h"
+	"Connection.h"
+	<math.h>
+	<vector>
+
+1727845096 e:\project\psystem\cpp_library\include\bus.h
+	<iostream>
+	<complex>
+
+1727845096 e:\project\psystem\cpp_library\include\connection.h
+	<complex>
+
